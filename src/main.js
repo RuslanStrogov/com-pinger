@@ -1,4 +1,4 @@
-const { SerialPort } = require('serialport');
+import { SerialPort } from "serialport";
 
 let pingInterval;
 let pingIntervalDelay = 1000;
@@ -47,7 +47,7 @@ const ping = () => {
 
   let writeMessage = 'ping ' + new Date();
   console.log(writeMessage);
-  port.write(writeMessage, portError);
+  port.write(writeMessage);
 };
 
 const pingStart = () => {

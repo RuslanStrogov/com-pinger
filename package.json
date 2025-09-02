@@ -1,9 +1,12 @@
 {
   "name": "com-pinger",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node main.js",
+    "startt": "node src/index.js",
+    "start": "webpack serve",
+    "build": "webpack",
+    "clean": "rd /s /q dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +22,14 @@
   "description": "",
   "dependencies": {
     "serialport": "^13.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "babel-loader": "^10.0.0",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   }
 }
