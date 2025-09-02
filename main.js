@@ -45,7 +45,7 @@ const openPort = () => {
 const ping = () => {
 //   console.log('ping call');
 
-  let writeMessage = 'ping ' + new Date().getDate();
+  let writeMessage = 'ping ' + new Date();
   console.log(writeMessage);
   port.write(writeMessage, portError);
 };
