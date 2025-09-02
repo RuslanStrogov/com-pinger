@@ -1,0 +1,23 @@
+{
+  "name": "com-pinger",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuslanStrogov/com-pinger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RuslanStrogov/com-pinger/issues"
+  },
+  "homepage": "https://github.com/RuslanStrogov/com-pinger#readme",
+  "description": "",
+  "dependencies": {
+    "serialport": "^13.0.0"
+  }
+}
