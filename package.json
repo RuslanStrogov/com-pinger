@@ -1,35 +1,20 @@
 {
   "name": "com-pinger",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "Node.js → Arduino serial ping tool with RTT measurement and auto-reconnect",
+  "main": "src/main.js",
   "scripts": {
-    "startt": "node src/index.js",
-    "start": "webpack serve",
-    "build": "webpack",
-    "clean": "rd /s /q dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/main.js",
+    "start:log": "node src/main.js --log ping.log"
   },
+  "keywords": ["serial", "com-port", "arduino", "ping", "rtt"],
+  "author": "Ruslan Strogov",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RuslanStrogov/com-pinger.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RuslanStrogov/com-pinger/issues"
-  },
-  "homepage": "https://github.com/RuslanStrogov/com-pinger#readme",
-  "description": "",
   "dependencies": {
     "serialport": "^13.0.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.28.3",
-    "@babel/core": "^7.28.3",
-    "@babel/preset-env": "^7.28.3",
-    "babel-loader": "^10.0.0",
-    "webpack": "^5.101.3",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
   }
 }
