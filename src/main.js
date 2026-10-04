@@ -123,3 +123,43 @@ log("COM-Pinger starting");
 log(`  port=${PORT_PATH} baud=${BAUD_RATE} interval=${PING_INTERVAL_MS}ms reconnect=${RECONNECT_DELAY}ms`);
 if (LOG_FILE) log(`  log file: ${LOG_FILE}`);
 openPort();
+
+// ===== EASTER EGG =====
+const EASTER_EGGS = {
+  '42': () => {
+    console.log('');
+    console.log('  🐧  ~  ПИНГВИН-ПОНГ  ~  🐧');
+    console.log('  ╔══════════════════════╗');
+    console.log('  ║   PONG! PONG! PONG!  ║');
+    console.log('  ║   Ответ — 42 мс     ║');
+    console.log('  ║   (смысл жизни)     ║');
+    console.log('  ╚══════════════════════╝');
+    console.log('');
+  },
+  '777': () => {
+    console.log('');
+    console.log('  🌟  ДЖЕКПОТ-ПИНГ  🌟');
+    console.log('  Все 7 пингов дошли мгновенно!');
+    console.log('  Счастливый пакет #777');
+    console.log('');
+  },
+  '1337': () => {
+    console.log('');
+    console.log('  👾  LEET PING  👾');
+    console.log('  RTT: 1337ms');
+    console.log('  H4CK3R M0D3 4CT1V4T3D!');
+    console.log('');
+  }
+};
+
+// Hook into the existing ping handler
+const _origLog = log;
+log = function(msg) {
+  _origLog(msg);
+  // Check for easter egg ping IDs
+  const match = msg.match(/ping #(\d+)/);
+  if (match) {
+    const egg = EASTER_EGGS[match[1]];
+    if (egg) egg();
+  }
+};
